@@ -53,7 +53,6 @@ async def track(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def regular_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
     logger.debug(f"{update.effective_chat.id=}")
-    await send_message_to_myself()
     await context.bot.send_message(chat_id=update.effective_chat.id,
         text="No smart LLM responses here. All hardcoded goodness.")
 
