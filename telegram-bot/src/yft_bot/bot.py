@@ -1,7 +1,10 @@
 import logging
+import pprint
 
 from telegram import Update
 from telegram.ext import ContextTypes
+
+from yft_bot.yf_track import basic_info
 
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -32,7 +35,16 @@ async def help(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(chat_id=update.effective_chat.id, text=text)
 
 async def track(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    raise NotImplementedError
+    ticker = "VWCE.DE"
+    try:
+        info = basic_info(ticker)
+        message = pprint.pformat(info)
+    except Exception as e:
+        message = f"Exception while fetching info for Ticker {ticker}.\nException: {e}"
+
+    await context.bot.send_message(chat_id=update.effective_chat.id,
+        text=message)
+
 
 async def regular_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
     logger.debug(f"{update.effective_chat.id=}")
