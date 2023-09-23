@@ -5,7 +5,14 @@
 - Get an API token from "BotFather"
 - Set as environment variable: export `TELEGRAMTOKEN=<token>`
 
-## Running the bot
+## Start the bot
 
-- Activate the python environment
-- python main.py
+```python
+python src/yft_bot/main.py
+```
+
+## Send a debug message
+
+```python
+python src/yft_bot/debug.py
+```
