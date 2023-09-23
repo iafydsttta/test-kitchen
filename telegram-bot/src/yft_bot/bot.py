@@ -1,6 +1,3 @@
-# Code takes inspiration from tutorial here:
-# https://github.com/python-telegram-bot/python-telegram-bot/wiki/Extensions---Your-first-Bot
-
 import logging
 
 from telegram import Update
