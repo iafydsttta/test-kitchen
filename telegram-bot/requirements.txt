@@ -1,4 +1,0 @@
-python-dotenv
-jupyter
-python-telegram-bot
-yfinance
